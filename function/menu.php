@@ -21,6 +21,9 @@ if (isset($_GET['halaman'])) {
         case 'hapus_kontak':
             include "page/contact/delete.php";
             break;
+        case 'user':
+            include "page/user/view.php";
+            break;
         default:
             include "page/error.php";
     }

@@ -1,6 +1,7 @@
 <?php
 $beranda = false;
 $kontak = false;
+$user = false;
 $tambah = false;
 $ubah = false;
 
@@ -18,6 +19,9 @@ if (isset($_GET['halaman'])) {
             break;
         case 'ubah_kontak':
             $ubah = true;
+            break;
+        case 'user':
+            $user = true;
             break;
         default:
             $beranda = false;
@@ -78,17 +82,23 @@ if (isset($_GET['halaman'])) {
                 </li>
 
                 <?php if (isset($_SESSION['nama'])) : ?>
-                    <li class="sidebar-title">Data</li>
+                    <!-- <li class="sidebar-title">Data</li> -->
                     <li class="sidebar-item <?= $kontak || $tambah || $ubah ? 'active' : '' ?>">
                         <a href="index.php?halaman=kontak" class="sidebar-link">
                             <i class="bi bi-person-fill"></i>
                             <span>Kontak</span>
                         </a>
                     </li>
+                    <li class="sidebar-item <?= $user || $tambah || $ubah ? 'active' : '' ?>">
+                        <a href="index.php?halaman=user" class="sidebar-link">
+                            <i class="bi bi-person-fill"></i>
+                            <span>User</span>
+                        </a>
+                    </li>
                 <?php else : ?>
                 <?php endif ?>
 
-                <li class="sidebar-title">Collapse</li>
+                <!-- <li class="sidebar-title">Collapse</li>
 
                 <li
                     class="sidebar-item  has-sub">
@@ -126,8 +136,7 @@ if (isset($_GET['halaman'])) {
 
                     </ul>
 
-
-                </li>
+                </li> -->
 
             </ul>
         </div>
